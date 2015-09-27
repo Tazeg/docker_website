@@ -37,7 +37,7 @@ docker ps
 ```
 then
 ``` bash
-docker exec -it [CONTAINER ID]
+docker exec -it [CONTAINER ID] bash
 root@d779731e73ac:/# mysql -u myuser -p
 ```
 
@@ -46,7 +46,7 @@ The user, or root, are those you can manage in the `mysql.sh` file before the bu
 ### Show Apache logs
 
 ``` bash
-docker exec -it [CONTAINER ID]
+docker exec -it [CONTAINER ID] bash
 root@d779731e73ac:/# tail -f /var/log/apache2/error.log
 root@d779731e73ac:/# tail -f /var/log/apache2/access.log
 ```
