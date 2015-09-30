@@ -23,6 +23,9 @@ ENV TERM xterm
 RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
 RUN rm /var/www/html/index.html
 COPY ["www","/var/www/html"]
+RUN chgrp -R www-data /var/www
+RUN find /var/www -type d -exec chmod 775 {} +
+RUN find /var/www -type f -exec chmod 664 {} +
 
 # PHP
 RUN sed -i -e "s/upload_max_filesize\s*=\s*2M/upload_max_filesize = 100M/g" /etc/php5/apache2/php.ini
